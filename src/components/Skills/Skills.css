@@ -1,0 +1,25 @@
+.my-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.my-skills > li {
+    list-style: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 4px;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--primaryColor);  
+    border: solid 1px var(--primaryColor);
+}
+
+.my-skills > li:hover{
+    color: var(--primaryColor);
+    background-color: white; 
+    cursor: default; 
+}

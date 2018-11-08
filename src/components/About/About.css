@@ -1,0 +1,12 @@
+.titulo-about {
+    font-size: 20px;
+    margin-top: 45px;
+    text-transform: uppercase;
+}
+
+.description-about {
+    text-align: justify;
+    line-height: 2.3rem;
+    color: #CCFFFFFF;
+}
+  

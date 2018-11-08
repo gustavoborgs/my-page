@@ -1,0 +1,26 @@
+.sobre_mim {
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 55px;
+  margin-bottom: 22px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.nome {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+}
+
+.titulo {
+  font-size: 20px;
+  margin-top: 45px;
+  text-transform: uppercase;
+  color: #2892D7;
+}
+
+.img-fluid {
+    width: 80%;
+    height: auto;
+}
