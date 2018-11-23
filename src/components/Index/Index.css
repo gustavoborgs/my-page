@@ -1,0 +1,14 @@
+
+section{
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
+
+.bg-smoke {
+    background-color: whitesmoke;
+}
+
+.bg-primary {
+    background-color: var(--primaryColor);
+    color: white;
+}

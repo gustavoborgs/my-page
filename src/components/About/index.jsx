@@ -5,6 +5,31 @@ import { SocialIcon } from 'react-social-icons';
 import './About.css'
 
 class index extends Component {
+    getBio = () => {
+        if(this.props.configs.length > 0 && this.props.configs.find(item => item.index === "bio") != null) {
+            return <p className="description-about">{ this.props.configs.find(item => item.index === "bio").value }</p>
+        }
+        else {
+            return "Loading..."
+        }
+    }
+
+    getProf = () => {
+        if(this.props.configs.length > 0 && this.props.configs.find(item => item.index === "prof") != null) {
+            return <p className="description-about">{ this.props.configs.find(item => item.index === "prof").value }</p>
+        }
+        else {
+            return "Loading..."
+        }
+    }
+
+    getGithub = () => {
+        if(this.props.configs.length > 0 && this.props.configs.find(item => item.index === "github-url") != null) {
+            const gitUrl = this.props.configs.find(item => item.index === "github-url").value
+            return <SocialIcon url={gitUrl} color="#EEffffff" style={{width: 100, height: 100}} />
+        }
+    }
+
     render() {
         return (
             <ScrollableAnchor id={'about'}>
@@ -17,18 +42,17 @@ class index extends Component {
                         </Col>
                         <Col mdOffset={1} md={5}>
                             <h3 className="titulo-about">BIOGRAFIA</h3>
-                            <p className="description-about">Meu nome é Gustavo, tenho 20 anos e hoje sou responsavel por todo o desenvolvimento dos aplicativos da Yazo.
-Aos meus 12 anos comecei a criar meus primeiros codigos criando jogos e servidores, e ao 15 fiz um curso tecnico no Senai para me aperfeiçoar e a partir dali tive grandes oportunidades onde pude competir na Olimpiada do Conhecimento representando o estado do Paraná em uma competição nacional e trouxe para o Senai Londrina a medalha de ouro, e tambem na World Skills Curitiba, em que eu trouxe a medalha de bronze. Hoje estou cursando Engenharia de Software na Universidade Estadual do Paraná (UTFPR).</p>
+                            { this.getBio() }
                         </Col>
                         <Col md={5}>
                             <h3 className="titulo-about">PROFISSÃO</h3>
-                            <p className="description-about">Meu nome é Gustavo, tenho 20 anos e hoje sou responsavel por todo o desenvolvimento dos aplicativos da Yazo.
-Aos meus 12 anos comecei a criar meus primeiros codigos criando jogos e servidores, e ao 15 fiz um curso tecnico no Senai para me aperfeiçoar e a partir dali tive grandes oportunidades onde pude competir na Olimpiada do Conhecimento representando o estado do Paraná em uma competição nacional e trouxe para o Senai Londrina a medalha de ouro, e tambem na World Skills Curitiba, em que eu trouxe a medalha de bronze. Hoje estou cursando Engenharia de Software na Universidade Estadual do Paraná (UTFPR).</p>
+                            { this.getProf() }
                         </Col>
                     </Row>
                     <Row style={{marginTop: 50}}>
                         <Col className="text-center" lg={12}>
-                            <SocialIcon url="https://github.com/gustavoborgs" color="#EEffffff" style={{width: 100, height: 100}} />
+                            { this.getGithub() }
+                            {/* <SocialIcon url="https://github.com/gustavoborgs" color="#EEffffff" style={{width: 100, height: 100}} /> */}
                             <h4>GITHUB</h4>
                             <p>Veja alguns dos meus projetos no GitHub.</p>
                         </Col>

@@ -33,7 +33,7 @@ class index extends Component {
                             <FormControl componentClass="textarea" placeholder="Escreva aqui a sua mensagem" />
                         </FormGroup>
                         <Button className="btn btn-primary pull-right" type="submit">Enviar</Button>
-                        <Button className="btn btn-default pull-right margin_right" type="cancel">Limpar</Button>
+                        <Button className="btn btn-default pull-right margin_right" type="reset">Limpar</Button>
                     </form>
                     </Col>
                 </Row>

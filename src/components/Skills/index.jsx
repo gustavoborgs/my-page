@@ -3,8 +3,28 @@ import {Grid, Row, Col } from 'react-bootstrap';
 import ScrollableAnchor from 'react-scrollable-anchor'
 import './Skills.css';
 
+import axios from 'axios';  
+
+const api = axios.create({
+    baseURL: 'https://admin-gustavo.herokuapp.com/',
+    headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+    }
+})
+
 class index extends Component {
+
+    state = {
+        skills: []
+    }
+
+    async componentDidMount() {
+        const {data: skills} = await api.get('/skills');
+        this.setState({ skills: skills })
+    }
+
     render() {
+        
         return (
             <ScrollableAnchor id={'skills'}>
             <section>
@@ -19,43 +39,9 @@ class index extends Component {
                         </Col>
                         <Col lgOffset={2} lg={8} xs={12}>
                             <ul className="my-skills">
-                                <li>Java</li>
-                                <li>C#</li>
-                                <li>Android Studio</li>
-                                <li>XCode</li>
-                                <li>MySql</li>
-                                <li>SQLServer</li>
-                                <li>CSS</li>
-                                <li>Realidade Aumentada</li>
-                                <li>Ruby</li>
-                                <li>Rails</li>
-                                <li>JSON</li>
-                                <li>UML</li>
-                                <li>PHP</li>
-                                <li>Vuforia</li>
-                                <li>Swift</li>
-                                <li>React</li>
-                                <li>Asp.Net</li>
-                                <li>HTML</li>
-                                <li>PostGreSQL</li>
-                                <li>Wamp</li>
-                                <li>Firebase</li>
-                                <li>SQLite</li>
-                                <li>Heroku</li>
-                                <li>API</li>
-                                <li>Git</li>
-                                <li>XML</li>
-                                <li>NPM</li>
-                                <li>Visual Studio</li>
-                                <li>Photoshop</li>
-                                <li>MVC</li>
-                                <li>TCP/UDP</li>
-                                <li>Windows</li>
-                                <li>Socket</li>
-                                <li>Web Server</li>
-                                <li>JavaScript</li>
-                                <li>Adobe XD</li>
-                                <li>Xampp</li>
+                                {this.state.skills.map(skill => (
+                                    <li key={ skill.id }>{skill.name}</li>
+                                ))}
                             </ul>
                         </Col>
                     </Row>

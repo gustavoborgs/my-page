@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col, Image } from 'react-bootstrap';
 import ScrollableAnchor from 'react-scrollable-anchor'
-import { SocialIcon } from 'react-social-icons';
 import './Portfoil.css'
 
 class index extends Component {
@@ -9,7 +8,7 @@ class index extends Component {
         return (
             <ScrollableAnchor id={'portfolio'}>
             <section>
-                
+                <Grid>
                     <Row>
                         <Col lg={12}>
                             <h1 className="text-center">Portfólio</h1>
@@ -27,7 +26,7 @@ class index extends Component {
                             <Image responsive src="./assets/work3.jpg"/>
                         </Col>
                     </Row>
-                
+                </Grid>
             </section>
             </ScrollableAnchor>
         );
